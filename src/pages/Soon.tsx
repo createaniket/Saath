@@ -21,11 +21,11 @@ const Soon = () => {
           <div>
             <p className="text-[10px] uppercase tracking-[0.25em] text-sage">Phase 01 · A quiet beginning</p>
             <h1 className="mt-2 font-serif-display text-3xl leading-[1.05] tracking-tight text-balance md:text-4xl">
-              Sexual health, <em className="not-italic text-sage">said simply</em> — built for the mohalla.
+              Sexual health, <em className="not-italic text-sage">said simply</em> - built for the mohalla.
             </h1>
 
             <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft md:text-base">
-              Saath is a mohalla sexual health clinic and chemist. Backed by patient investors and run as a not-for-profit — every rupee goes back into better care, lower prices, and more doors that open quietly in more mohallas.
+              Saath is a mohalla sexual health clinic and chemist. Backed by patient investors and run as a not-for-profit - every rupee goes back into better care, lower prices, and more doors that open quietly in more mohallas.
             </p>
             <p className="mt-2 max-w-md text-xs text-ink-soft md:text-sm">
               We're keeping the rest under wraps. The doors open this season.
@@ -69,7 +69,7 @@ const Soon = () => {
               key={i}
               className="font-serif-display text-base italic text-white md:text-lg"
             >
-              Built in India, for India. So our children — and theirs — can talk about sexual health without shame.
+              Built in India, for India. So our children - and theirs - can talk about sexual health without shame.
               <span className="mx-8 text-white/80">✦</span>
             </span>
           ))}
