@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Saath Design System
+  Calm, premium, Apple-store-meets-wellness.
+  Palette: warm cream paper, deep ink, sage, terracotta accent.
+  All colors HSL.
+*/
+
+@layer base {
+  :root {
+    /* Surface — soft cream paper, true ink */
+    --background: 40 40% 97%;          /* cream / stone */
+    --foreground: 0 0% 8%;             /* near-black ink */
+
+    --card: 0 0% 100%;                 /* white */
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    /* Brand — black as primary CTA, saffron + sky as accents */
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 30% 93%;           /* warm stone */
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 40 24% 91%;
+    --muted-foreground: 0 0% 36%;
+
+    --accent: 28 92% 70%;              /* light saffron / orange */
+    --accent-foreground: 0 0% 8%;
+
+    /* Brand accents — India-inspired */
+    --saffron: 28 92% 68%;             /* light orange */
+    --saffron-soft: 30 95% 93%;
+    --sky: 205 75% 78%;                /* light blue */
+    --sky-soft: 205 80% 94%;
+    --sky-deep: 205 70% 52%;           /* India sky — deeper, saturated */
+    --saffron-deep: 22 92% 50%;        /* deep orange for highlights on blue */
+    --cream: 40 40% 97%;
+    --stone: 38 22% 88%;
+    --paper: 0 0% 100%;
+    --ink: 0 0% 8%;
+    --ink-soft: 0 0% 32%;
+
+    /* Legacy aliases (kept so existing components keep working, retuned to new palette) */
+    --sage: 205 60% 64%;               /* now sky-blue */
+    --sage-soft: 205 80% 94%;
+    --terracotta: 28 92% 68%;          /* now saffron */
+    --terracotta-soft: 30 95% 93%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 38 18% 88%;
+    --input: 38 18% 88%;
+    --ring: 0 0% 8%;
+
+    --radius: 1rem;
+
+    /* Gradients — warm cream washed with saffron + sky */
+    --gradient-warm: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 36% 94%) 100%);
+    --gradient-sage: linear-gradient(135deg, hsl(205 80% 94%) 0%, hsl(40 40% 97%) 100%);
+    --gradient-hero: radial-gradient(110% 80% at 85% 15%, hsl(30 95% 92%) 0%, hsl(205 80% 95%) 45%, hsl(40 40% 97%) 80%);
+
+    /* Shadows */
+    --shadow-soft: 0 1px 2px hsl(0 0% 8% / 0.04), 0 8px 24px -8px hsl(0 0% 8% / 0.08);
+    --shadow-card: 0 1px 2px hsl(0 0% 8% / 0.04), 0 20px 40px -20px hsl(0 0% 8% / 0.12);
+    --shadow-lift: 0 30px 60px -30px hsl(0 0% 8% / 0.18);
+
+    /* Motion */
+    --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 40 40% 97%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 8%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 24% 91%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 38 18% 88%;
+    --sidebar-ring: 0 0% 8%;
+  }
+
+  .dark {
+    --background: 200 18% 8%;
+    --foreground: 36 30% 94%;
+    --card: 200 18% 10%;
+    --card-foreground: 36 30% 94%;
+    --popover: 200 18% 10%;
+    --popover-foreground: 36 30% 94%;
+    --primary: 36 30% 94%;
+    --primary-foreground: 200 18% 8%;
+    --secondary: 200 12% 16%;
+    --secondary-foreground: 36 30% 94%;
+    --muted: 200 12% 16%;
+    --muted-foreground: 36 10% 70%;
+    --accent: 130 18% 52%;
+    --accent-foreground: 36 30% 94%;
+    --destructive: 0 62.8% 40%;
+    --destructive-foreground: 36 30% 94%;
+    --border: 200 12% 18%;
+    --input: 200 12% 18%;
+    --ring: 36 30% 94%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-serif-display {
+    font-family: 'Fraunces', Georgia, serif;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-gradient-warm {
+    background: var(--gradient-warm);
+  }
+  .bg-gradient-sage {
+    background: var(--gradient-sage);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-lift {
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s var(--ease-out-soft) both;
+}
